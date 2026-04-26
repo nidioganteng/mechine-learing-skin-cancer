@@ -1,0 +1,19 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Mac System Files
+.DS_Store
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Database & Environment Variables (SANGAT RAHASIA)
+.env
+
+# Folder Uploads (Biar foto percobaan tidak ikut terupload)
+static/uploads/
+
+models/
