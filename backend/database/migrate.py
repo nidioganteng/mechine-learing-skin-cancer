@@ -32,7 +32,7 @@ def migrate():
         """)
 
         # ==========================================
-        # TABEL SARAN RISIKO (3 Level)
+        # TABEL SARAN RISIKO (Binary: 0/1)
         # ==========================================
         cursor.execute("""
         CREATE TABLE saran_risiko (
@@ -84,27 +84,19 @@ def migrate():
         """)
 
         # ==========================================
-        # DATA SARAN PER LEVEL RISIKO (RF Threshold)
-        # Threshold: skor_rf >= 0.65 → TINGGI
-        #            skor_rf >= 0.35 → SEDANG
-        #            skor_rf <  0.35 → RENDAH
+        # DATA SARAN (Binary: BERISIKO / TIDAK BERISIKO)
+        # Model RF predict() → 1 = BERISIKO, 0 = TIDAK BERISIKO
         # ==========================================
         saran_data = [
             (
-                'RISIKO TINGGI',
-                'Model AI mendeteksi probabilitas keganasan yang tinggi pada kondisi kulit Anda. '
+                'BERISIKO',
+                'Model AI mendeteksi indikator risiko kanker kulit pada kondisi Anda. '
                 'Segera periksakan ke Dokter Spesialis Kulit (Sp.KK) untuk evaluasi klinis dan kemungkinan biopsi. '
                 'Jangan tunda pemeriksaan meskipun gejala terasa ringan.'
             ),
             (
-                'RISIKO SEDANG',
-                'Model AI mendeteksi beberapa indikator yang perlu diwaspadai. '
-                'Disarankan untuk berkonsultasi dengan dokter dalam waktu dekat dan melakukan pemeriksaan mandiri secara rutin setiap bulan. '
-                'Gunakan tabir surya SPF 30+ dan hindari paparan sinar matahari berlebih.'
-            ),
-            (
-                'RISIKO RENDAH',
-                'Model AI tidak mendeteksi indikator berisiko tinggi pada kondisi kulit Anda saat ini. '
+                'TIDAK BERISIKO',
+                'Model AI tidak mendeteksi indikator risiko kanker kulit pada kondisi Anda saat ini. '
                 'Tetap jaga kesehatan kulit dengan penggunaan tabir surya setiap hari dan lakukan pemeriksaan mandiri rutin. '
                 'Kunjungi dokter secara berkala untuk skrining preventif.'
             ),
@@ -118,7 +110,7 @@ def migrate():
         conn.commit()
         print("✅ Migrasi database berhasil!")
         print("   - Tabel users          ✓")
-        print("   - Tabel saran_risiko   ✓ (3 level risiko)")
+        print("   - Tabel saran_risiko   ✓ (binary: BERISIKO / TIDAK BERISIKO)")
         print("   - Tabel riwayat_tahap1 ✓")
         print("   - Tabel riwayat_tahap2 ✓")
         cursor.close()
