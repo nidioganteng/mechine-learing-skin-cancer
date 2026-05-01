@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { login } from '../../services/api'
 
 export default function LoginPage() {
+  const navigate = useNavigate()
   const [form, setForm] = useState({ email: '', password: '' })
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -19,8 +21,15 @@ export default function LoginPage() {
       return
     }
     setIsLoading(true)
-    // TODO: integrasi API
-    setTimeout(() => setIsLoading(false), 1000)
+    try {
+      await login(form.email, form.password)
+      navigate('/dashboard')
+    } catch (err) {
+      const msg = err.response?.data?.message || 'Terjadi kesalahan. Coba lagi.'
+      setError(msg)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (

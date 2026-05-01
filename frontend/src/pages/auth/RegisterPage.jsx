@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { register } from '../../services/api'
 
 export default function RegisterPage() {
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     nama_lengkap: '',
     email: '',
@@ -12,6 +14,7 @@ export default function RegisterPage() {
   const [showKonfirmasi, setShowKonfirmasi] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
 
   function handleChange(e) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -34,8 +37,16 @@ export default function RegisterPage() {
       return
     }
     setIsLoading(true)
-    // TODO: integrasi API
-    setTimeout(() => setIsLoading(false), 1000)
+    try {
+      const res = await register(nama_lengkap, email, password)
+      setSuccess(res.message)
+      setTimeout(() => navigate('/login'), 1500)
+    } catch (err) {
+      const msg = err.response?.data?.message || 'Terjadi kesalahan. Coba lagi.'
+      setError(msg)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const passwordStrength = (() => {
@@ -129,6 +140,13 @@ export default function RegisterPage() {
           {error && (
             <div className="mb-5 px-4 py-3 rounded-xl text-[13px] text-red-700 bg-red-50 border border-red-200">
               {error}
+            </div>
+          )}
+
+          {/* Success */}
+          {success && (
+            <div className="mb-5 px-4 py-3 rounded-xl text-[13px] text-emerald-700 bg-emerald-50 border border-emerald-200">
+              {success} Mengalihkan ke halaman login...
             </div>
           )}
 
