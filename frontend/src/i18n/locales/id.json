@@ -1,0 +1,395 @@
+{
+  "lang": { "id": "Indonesia", "en": "English" },
+
+  "nav": {
+    "dashboard": "Dashboard",
+    "skinAnalysis": "Analisis Kulit",
+    "history": "Riwayat",
+    "profile": "Profil"
+  },
+
+  "hero": {
+    "title1": "Intelligent Early",
+    "title2": "Skin Cancer",
+    "title3": "Detection",
+    "subtitle": "Lindungi kesehatan Anda dengan sistem pakar canggih kami. Algoritme kami menggabungkan EfficientNet B3 untuk analisis lesi kulit berbasis deep learning, dengan logika Forward Chaining interaktif yang didukung oleh Random Forest untuk skrining dan panduan yang presisi.",
+    "cta": "Mulai Sekarang →"
+  },
+
+  "features": {
+    "badge": "Fitur Utama",
+    "heading": "Mengapa YourSKIN?",
+    "subtitle": "Dua tahap analisis yang saling melengkapi untuk deteksi dini kanker kulit yang lebih akurat dan terpercaya.",
+    "items": [
+      {
+        "tag": "Tahap 1 · Random Forest",
+        "title": "Skrining Kuesioner",
+        "desc": "Isi kuesioner gejala kulit — asimetris, tepi, warna, diameter, evolusi, gatal, dan riwayat keluarga. Model Random Forest menghitung skor risiko Anda secara instan."
+      },
+      {
+        "tag": "Tahap 2 · EfficientNet-B3",
+        "title": "Analisis Gambar AI",
+        "desc": "Upload foto lesi kulit Anda. EfficientNet-B3 menganalisis dan mengklasifikasi ke 7 kategori diagnosis dengan preprocessing CLAHE untuk hasil yang presisi."
+      },
+      {
+        "tag": "Risiko Rendah · Sedang · Tinggi",
+        "title": "Hasil & Rekomendasi",
+        "desc": "Dapatkan laporan lengkap — tingkat risiko, kelas lesi terdeteksi, skor kepercayaan model, dan saran medis yang disesuaikan dengan hasil analisis Anda."
+      }
+    ]
+  },
+
+  "howItWorks": {
+    "badge": "Alur Penggunaan",
+    "heading": "Cara Kerja YourSKIN",
+    "subtitle": "Empat langkah sederhana untuk mendapatkan hasil deteksi dini yang komprehensif langsung dari perangkat Anda.",
+    "steps": [
+      {
+        "title": "Daftar & Login",
+        "desc": "Buat akun YourSKIN dengan email dan password. Data Anda tersimpan aman di server kami."
+      },
+      {
+        "title": "Isi Kuesioner",
+        "desc": "Jawab pertanyaan seputar kondisi dan gejala kulit — hanya butuh 2–3 menit."
+      },
+      {
+        "title": "Upload Foto Lesi",
+        "desc": "Jika risiko terdeteksi, lanjutkan dengan mengunggah foto lesi kulit untuk analisis visual AI."
+      },
+      {
+        "title": "Dapatkan Hasil",
+        "desc": "Lihat laporan risiko lengkap beserta rekomendasi tindakan medis yang perlu diambil."
+      }
+    ]
+  },
+
+  "stats": {
+    "badge": "Kemampuan Sistem",
+    "heading": "Didukung Data & Ilmu Pengetahuan",
+    "items": [
+      { "value": "7", "label": "Kelas Lesi Kulit", "desc": "melanoma, bcc, akiec, bkl, df, nv, vasc" },
+      { "value": "2", "label": "Tahap Analisis", "desc": "kuesioner + analisis gambar terintegrasi" },
+      { "value": "90%+", "label": "Akurasi Model", "desc": "EfficientNet-B3 pada dataset HAM10000" },
+      { "value": "< 10s", "label": "Waktu Deteksi", "desc": "hasil analisis real-time di browser Anda" }
+    ],
+    "diseasesHeading": "7 Kelas yang Dapat Dideteksi",
+    "diseasesSubtitle": "Model EfficientNet-B3 dilatih pada dataset HAM10000 untuk mengenali ketujuh kategori lesi kulit berikut.",
+    "risk": {
+      "high": "Tinggi",
+      "medium": "Sedang",
+      "low": "Rendah"
+    }
+  },
+
+  "cta": {
+    "badge": "Mulai Sekarang — Gratis",
+    "heading1": "Deteksi Lebih Awal,",
+    "heading2": "Hidup Lebih Aman.",
+    "subtitle": "Jangan tunggu gejala semakin parah. Gunakan YourSKIN untuk skrining mandiri berbasis AI — kapan saja, di mana saja.",
+    "register": "Daftar Sekarang →",
+    "login": "Sudah punya akun? Login",
+    "footer": "© 2025 YourSKIN · Sistem Deteksi Dini Kanker Kulit",
+    "academic": "Dibuat untuk keperluan akademik & penelitian"
+  },
+
+  "auth": {
+    "login": {
+      "tagline": "Deteksi Dini · AI-Powered",
+      "heading": "Selamat Datang Kembali",
+      "subtitle": "Masuk untuk melanjutkan analisis kulit Anda dengan teknologi Random Forest dan EfficientNet-B3 kami.",
+      "stats": {
+        "accuracy": "Akurasi Model",
+        "classes": "Kelas Diagnosis",
+        "stages": "Tahap Analisis"
+      },
+      "title": "Masuk",
+      "noAccount": "Belum punya akun?",
+      "register": "Daftar sekarang",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Lupa password?",
+      "emailPlaceholder": "nama@email.com",
+      "passwordPlaceholder": "Masukkan password",
+      "submit": "Masuk →",
+      "loading": "Memproses...",
+      "errorRequired": "Email dan password wajib diisi.",
+      "errorGeneral": "Terjadi kesalahan. Coba lagi.",
+      "footer": "© 2025 YourSKIN · Sistem Deteksi Kanker Kulit"
+    },
+    "register": {
+      "tagline": "Bergabung Gratis",
+      "heading": "Mulai Perjalanan Kesehatan Anda",
+      "subtitle": "Buat akun dan dapatkan akses ke dua tahap analisis kulit bertenaga AI — kuesioner risiko dan deteksi gambar lesi.",
+      "steps": [
+        "Daftar & buat akun Anda",
+        "Isi kuesioner gejala kulit",
+        "Upload foto & dapatkan hasil"
+      ],
+      "title": "Buat Akun",
+      "hasAccount": "Sudah punya akun?",
+      "login": "Masuk di sini",
+      "fullName": "Nama Lengkap",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Konfirmasi Password",
+      "fullNamePlaceholder": "Nama lengkap Anda",
+      "emailPlaceholder": "nama@email.com",
+      "passwordPlaceholder": "Minimal 8 karakter",
+      "confirmPasswordPlaceholder": "Ulangi password",
+      "submit": "Buat Akun →",
+      "loading": "Menyimpan...",
+      "strength": {
+        "tooShort": "Terlalu pendek",
+        "weak": "Lemah",
+        "medium": "Sedang",
+        "strong": "Kuat"
+      },
+      "error": {
+        "allRequired": "Semua field wajib diisi.",
+        "minPassword": "Password minimal 8 karakter.",
+        "passwordMismatch": "Konfirmasi password tidak cocok.",
+        "passwordNoMatch": "Password tidak cocok",
+        "general": "Terjadi kesalahan. Coba lagi."
+      },
+      "successRedirect": "Mengalihkan ke halaman login...",
+      "footer": "© 2025 YourSKIN · Sistem Deteksi Kanker Kulit"
+    }
+  },
+
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Halo {{name}}",
+    "welcomeSubtitle": "Selamat Datang!",
+    "totalChecks": "Total Pengecekan",
+    "lastStatus": "Status terakhir",
+    "noStatus": "Belum ada",
+    "recentHistory": "Riwayat singkat",
+    "viewDetail": "Lihat lebih Detail",
+    "tableDate": "Tanggal & Waktu",
+    "tableStage1": "Analisis Tahap 1",
+    "tableStage2": "Analisis Tahap 2",
+    "tableNote": "Keterangan",
+    "noHistory": "Belum ada riwayat analisis",
+    "startDetection": "MULAI DETEKSI",
+    "loading": "Memuat data...",
+    "risky": "Berisiko",
+    "notRisky": "Tidak Berisiko"
+  },
+
+  "history": {
+    "title": "Riwayat Analisis",
+    "totalChecks": "Total Pemeriksaan",
+    "risky": "Berisiko",
+    "notRisky": "Tidak Berisiko",
+    "filterAll": "Semua ({{count}})",
+    "filterRisky": "Berisiko ({{count}})",
+    "filterSafe": "Tidak Berisiko ({{count}})",
+    "age": "Usia {{age}} tahun",
+    "badgeRisky": "BERISIKO",
+    "badgeSafe": "AMAN",
+    "sectionPersonal": "Data Diri",
+    "sectionSymptoms": "Gejala Klinis",
+    "sectionScore": "Skor Analisis",
+    "sectionStage2": "Hasil Tahap 2 (AI)",
+    "uvExposure": "Paparan UV",
+    "familyHistory": "Riwayat Keluarga",
+    "moleCount": "Jumlah Tahi Lalat",
+    "diameter": "Diameter (mm)",
+    "itchy": "Gatal",
+    "bleeding": "Berdarah",
+    "asymmetric": "Asimetris",
+    "roughBorder": "Tepian Kasar",
+    "varyingColor": "Warna Bervariasi",
+    "evolution": "Evolusi",
+    "rfScore": "Skor RF (Tahap 1)",
+    "lesionType": "Jenis Lesi",
+    "confidence": "Confidence",
+    "noHistory": "Belum ada riwayat analisis",
+    "noFilterData": "Tidak ada data untuk filter ini",
+    "noImageAnalysis": "Analisis gambar tidak dilakukan",
+    "loading": "Memuat riwayat...",
+    "yes": "Ya",
+    "no": "Tidak",
+    "exists": "Ada",
+    "notExists": "Tidak Ada"
+  },
+
+  "profile": {
+    "title": "Profil Saya",
+    "totalChecks": "Total Pemeriksaan",
+    "lastStatus": "Status Terakhir",
+    "editName": "Ubah Nama",
+    "editNameSubtitle": "Perbarui nama tampilan akun Anda",
+    "changePassword": "Ganti Password",
+    "changePasswordSubtitle": "Pastikan password baru minimal 6 karakter",
+    "email": "Email",
+    "fullName": "Nama Lengkap",
+    "fullNamePlaceholder": "Masukkan nama lengkap...",
+    "saveName": "Simpan Nama",
+    "saving": "Menyimpan...",
+    "nameUpdated": "Nama berhasil diperbarui!",
+    "oldPassword": "Password Lama",
+    "newPassword": "Password Baru",
+    "confirmPassword": "Konfirmasi Password",
+    "savePassword": "Simpan Password",
+    "passwordUpdated": "Password berhasil diubah!",
+    "logout": "Keluar",
+    "loading": "Memuat profil...",
+    "error": {
+      "allRequired": "Semua field wajib diisi.",
+      "passwordMismatch": "Konfirmasi password tidak cocok.",
+      "minPassword": "Password baru minimal 6 karakter.",
+      "general": "Terjadi kesalahan. Coba lagi."
+    },
+    "risky": "Berisiko",
+    "notRisky": "Tidak Berisiko"
+  },
+
+  "questionnaire": {
+    "title": "Analisis Kulit",
+    "step": "Step",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Selesai",
+    "processing": "Memproses...",
+    "error": "Terjadi kesalahan. Coba lagi.",
+
+    "personal": {
+      "name": "Nama",
+      "age": "Umur",
+      "agePlaceholder": "masukkan umur anda...",
+      "namePlaceholder": "masukkan nama anda...",
+      "gender": "Jenis Kelamin",
+      "genderPlaceholder": "Pria / Wanita",
+      "male": "Pria",
+      "female": "Wanita",
+      "skinType": "Tipe kulit (skala Fitzpatrick)",
+      "skinTypePlaceholder": "Pilih tipe kulit anda",
+      "uvExposure": "Seberapa sering anda terpapar matahari?",
+      "uvLow": "Jarang (Low)",
+      "uvModerate": "Sedang (Moderate)",
+      "uvHigh": "Sering (High)",
+      "uvPlaceholder": "Pilih frekuensi...",
+      "familyHistory": "Apakah ada riwayat kanker kulit di keluarga anda?",
+      "moleCount": "Perkiraan jumlah tahi lalat?",
+      "moleCountPlaceholder": "masukkan jumlah tahi lalat.",
+      "exists": "ada",
+      "notExists": "tidak ada"
+    },
+
+    "symptoms": {
+      "itchy": "Apakah terasa gatal?",
+      "bleeding": "Apakah sering berdarah?",
+      "asymmetric": "Bentuknya tidak simetris (asimetris)?",
+      "roughBorder": "Apakah tepiannya tidak beraturan?",
+      "varyingColor": "Apakah warna tidak merata/bervariasi?",
+      "evolution": "Apakah ukuran / bentuk berubah seiring waktu?",
+      "diameter": "Diameter lesi/tahi lalat (mm)",
+      "yes": "ya",
+      "no": "tidak"
+    },
+
+    "rfResult": {
+      "heading": "Hasil Deteksi Random Forest",
+      "risky": "BERISIKO",
+      "notRisky": "TIDAK BERISIKO",
+      "probabilityLabel": "Probabilitas Risiko",
+      "advice": "Saran",
+      "adviceRisky": "Segera konsultasikan ke dokter kulit untuk evaluasi lebih lanjut kondisi kulit Anda.",
+      "adviceNotRisky": "Jaga gaya hidup sehat dan tetap pantau perubahan pada kulit Anda secara rutin.",
+      "highRiskNote": "Hasil menunjukkan risiko tinggi. Lanjutkan ke <strong>Tahap 2</strong> untuk analisis citra menggunakan EfficientNet-B3."
+    },
+
+    "upload": {
+      "heading": "Analisis citra kanker kulit",
+      "subtitle": "Halaman ini dikhususkan untuk anda yang mendapatkan hasil berisiko tinggi pada tahap sebelumnya, silahkan unggah foto area kulit (lesi/tahi lalat) yang mencurigakan untuk dianalisis",
+      "uploadLabel": "Unggah foto kulit anda (Format: JPG & PNG)",
+      "dragDrop": "Drag and drop file here",
+      "limit": "Limit 200MB per file",
+      "uploadBtn": "Upload File",
+      "analyzing": "Menganalisis gambar...",
+      "errorLowQuality": "Gambar kurang jelas untuk dianalisis. Pastikan foto fokus dan cukup dekat.",
+      "errorFailed": "Analisis gagal.",
+      "errorGeneral": "Terjadi kesalahan saat menganalisis. Coba lagi.",
+      "resultHeading": "Hasil Deteksi AI",
+      "confidence": "Tingkat Keyakinan (Confidence)",
+      "lesionCategory": "Kategori Lesi",
+      "dangerLevel": "Tingkat Bahaya",
+      "disclaimer": "*Disclaimer"
+    },
+
+    "summary": {
+      "heading": "Laporan Hasil Analisis",
+      "highRisk": "RESIKO TINGGI",
+      "notRisky": "TIDAK BERISIKO",
+      "demographics": "Data Demografi",
+      "aiScore": "Skor AI — EfficientNet-B3",
+      "clinicalSymptoms": "Gejala Klinis",
+      "rfScore": "Skor Random Forest (Tahap 1)",
+      "name": "Nama",
+      "age": "Usia",
+      "gender": "Jenis Kelamin",
+      "skinType": "Tipe Kulit",
+      "uvExposure": "Paparan UV",
+      "familyHistory": "Riwayat Keluarga",
+      "familyExists": "Ada",
+      "familyNotExists": "Tidak Ada",
+      "aiDetection": "Hasil Deteksi AI",
+      "confidenceLevel": "Tingkat Keyakinan (Confidence)",
+      "lesionCategory": "Kategori Lesi",
+      "dangerLevel": "Tingkat Bahaya",
+      "spontaneousItchy": "Gatal Spontan",
+      "spreadBleeding": "Berdarah Tersebar",
+      "asymmetric": "A – Asimetris",
+      "roughBorder": "B – Tepian Kasar",
+      "varyingColor": "C – Warna Bervariasi",
+      "diameter": "D – Diameter > 6mm",
+      "evolution": "E – Evolusi / Perubahan",
+      "rfScoreLabel": "Skor RF",
+      "moleCount": "Jumlah Tahi Lalat",
+      "lesionDiameter": "Diameter Lesi",
+      "noImageAnalysis": "Analisis gambar tidak dilakukan",
+      "years": "Tahun",
+      "yes": "Ya",
+      "notExists": "Tidak Ada"
+    }
+  },
+
+  "diseases": {
+    "akiec": {
+      "kategori": "Lesi Prakanker",
+      "bahaya": "Resiko Sedang",
+      "pesan": "Perlu pemeriksaan dokter dalam waktu dekat. Lesi prakanker dapat berkembang menjadi karsinoma sel skuamosa jika tidak ditangani."
+    },
+    "bcc": {
+      "kategori": "Kanker Kulit Ganas",
+      "bahaya": "Resiko Tinggi",
+      "pesan": "Segera periksakan ke Dokter Spesialis Kulit (Sp. KK). Basal cell carcinoma membutuhkan penanganan segera namun jarang menyebar ke organ lain."
+    },
+    "bkl": {
+      "kategori": "Lesi Jinak",
+      "bahaya": "Resiko Rendah",
+      "pesan": "Lesi ini umumnya jinak. Tetap pantau dan lakukan pemeriksaan rutin ke dokter secara berkala."
+    },
+    "df": {
+      "kategori": "Lesi Jinak",
+      "bahaya": "Resiko Rendah",
+      "pesan": "Dermatofibroma adalah lesi jinak yang umumnya tidak berbahaya. Pemeriksaan rutin tetap dianjurkan."
+    },
+    "mel": {
+      "kategori": "Kanker Kulit Ganas",
+      "bahaya": "Resiko Sangat Tinggi",
+      "pesan": "Sangat MENDESAK - Segera periksakan ke Dokter Spesialis Kulit (Sp. KK) dan minta biopsi. Melanoma adalah kanker kulit paling berbahaya yang memerlukan penanganan segera."
+    },
+    "nv": {
+      "kategori": "Lesi Jinak",
+      "bahaya": "Resiko Rendah",
+      "pesan": "Tahi lalat biasa yang umumnya jinak. Pantau perubahan bentuk, warna, atau ukuran secara berkala."
+    },
+    "vasc": {
+      "kategori": "Lesi Vaskular",
+      "bahaya": "Resiko Rendah",
+      "pesan": "Lesi vaskular umumnya jinak. Konsultasikan ke dokter untuk evaluasi lebih lanjut."
+    }
+  }
+}

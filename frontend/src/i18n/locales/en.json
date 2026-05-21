@@ -1,0 +1,395 @@
+{
+  "lang": { "id": "Indonesia", "en": "English" },
+
+  "nav": {
+    "dashboard": "Dashboard",
+    "skinAnalysis": "Skin Analysis",
+    "history": "History",
+    "profile": "Profile"
+  },
+
+  "hero": {
+    "title1": "Intelligent Early",
+    "title2": "Skin Cancer",
+    "title3": "Detection",
+    "subtitle": "Protect your health with our advanced expert system. Our algorithm combines EfficientNet B3 for deep learning-based skin lesion analysis, with interactive Forward Chaining logic powered by Random Forest for precise screening and guidance.",
+    "cta": "Get Started →"
+  },
+
+  "features": {
+    "badge": "Key Features",
+    "heading": "Why YourSKIN?",
+    "subtitle": "Two complementary analysis stages for more accurate and reliable early skin cancer detection.",
+    "items": [
+      {
+        "tag": "Stage 1 · Random Forest",
+        "title": "Questionnaire Screening",
+        "desc": "Fill out the skin symptom questionnaire — asymmetry, border, color, diameter, evolution, itching, and family history. The Random Forest model calculates your risk score instantly."
+      },
+      {
+        "tag": "Stage 2 · EfficientNet-B3",
+        "title": "AI Image Analysis",
+        "desc": "Upload a photo of your skin lesion. EfficientNet-B3 analyzes and classifies into 7 diagnostic categories with CLAHE preprocessing for precise results."
+      },
+      {
+        "tag": "Low · Medium · High Risk",
+        "title": "Results & Recommendations",
+        "desc": "Get a complete report — risk level, detected lesion class, model confidence score, and medical advice tailored to your analysis results."
+      }
+    ]
+  },
+
+  "howItWorks": {
+    "badge": "How It Works",
+    "heading": "How YourSKIN Works",
+    "subtitle": "Four simple steps to get comprehensive early detection results directly from your device.",
+    "steps": [
+      {
+        "title": "Register & Login",
+        "desc": "Create your YourSKIN account with email and password. Your data is stored securely on our servers."
+      },
+      {
+        "title": "Fill Questionnaire",
+        "desc": "Answer questions about your skin condition and symptoms — only takes 2–3 minutes."
+      },
+      {
+        "title": "Upload Lesion Photo",
+        "desc": "If risk is detected, proceed by uploading a photo of the skin lesion for AI visual analysis."
+      },
+      {
+        "title": "Get Results",
+        "desc": "View your complete risk report along with recommended medical actions to take."
+      }
+    ]
+  },
+
+  "stats": {
+    "badge": "System Capabilities",
+    "heading": "Backed by Data & Science",
+    "items": [
+      { "value": "7", "label": "Skin Lesion Classes", "desc": "melanoma, bcc, akiec, bkl, df, nv, vasc" },
+      { "value": "2", "label": "Analysis Stages", "desc": "questionnaire + integrated image analysis" },
+      { "value": "90%+", "label": "Model Accuracy", "desc": "EfficientNet-B3 on the HAM10000 dataset" },
+      { "value": "< 10s", "label": "Detection Time", "desc": "real-time analysis results in your browser" }
+    ],
+    "diseasesHeading": "7 Detectable Classes",
+    "diseasesSubtitle": "The EfficientNet-B3 model is trained on the HAM10000 dataset to recognize the following seven skin lesion categories.",
+    "risk": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+
+  "cta": {
+    "badge": "Get Started — Free",
+    "heading1": "Detect Earlier,",
+    "heading2": "Live Safer.",
+    "subtitle": "Don't wait for symptoms to worsen. Use YourSKIN for AI-powered self-screening — anytime, anywhere.",
+    "register": "Register Now →",
+    "login": "Already have an account? Login",
+    "footer": "© 2025 YourSKIN · Early Skin Cancer Detection System",
+    "academic": "Built for academic & research purposes"
+  },
+
+  "auth": {
+    "login": {
+      "tagline": "Early Detection · AI-Powered",
+      "heading": "Welcome Back",
+      "subtitle": "Sign in to continue your skin analysis with our Random Forest and EfficientNet-B3 technology.",
+      "stats": {
+        "accuracy": "Model Accuracy",
+        "classes": "Diagnosis Classes",
+        "stages": "Analysis Stages"
+      },
+      "title": "Sign In",
+      "noAccount": "Don't have an account?",
+      "register": "Register now",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "emailPlaceholder": "name@email.com",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In →",
+      "loading": "Processing...",
+      "errorRequired": "Email and password are required.",
+      "errorGeneral": "An error occurred. Try again.",
+      "footer": "© 2025 YourSKIN · Skin Cancer Detection System"
+    },
+    "register": {
+      "tagline": "Join for Free",
+      "heading": "Start Your Health Journey",
+      "subtitle": "Create an account and get access to two stages of AI-powered skin analysis — risk questionnaire and lesion image detection.",
+      "steps": [
+        "Register & create your account",
+        "Fill out the skin symptom questionnaire",
+        "Upload photo & get results"
+      ],
+      "title": "Create Account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in here",
+      "fullName": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "fullNamePlaceholder": "Your full name",
+      "emailPlaceholder": "name@email.com",
+      "passwordPlaceholder": "Minimum 8 characters",
+      "confirmPasswordPlaceholder": "Repeat password",
+      "submit": "Create Account →",
+      "loading": "Saving...",
+      "strength": {
+        "tooShort": "Too short",
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong"
+      },
+      "error": {
+        "allRequired": "All fields are required.",
+        "minPassword": "Password must be at least 8 characters.",
+        "passwordMismatch": "Passwords do not match.",
+        "passwordNoMatch": "Password does not match",
+        "general": "An error occurred. Try again."
+      },
+      "successRedirect": "Redirecting to login page...",
+      "footer": "© 2025 YourSKIN · Skin Cancer Detection System"
+    }
+  },
+
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Hello {{name}}",
+    "welcomeSubtitle": "Welcome!",
+    "totalChecks": "Total Checks",
+    "lastStatus": "Last status",
+    "noStatus": "None yet",
+    "recentHistory": "Recent history",
+    "viewDetail": "View Detail",
+    "tableDate": "Date & Time",
+    "tableStage1": "Stage 1 Analysis",
+    "tableStage2": "Stage 2 Analysis",
+    "tableNote": "Note",
+    "noHistory": "No analysis history yet",
+    "startDetection": "START DETECTION",
+    "loading": "Loading data...",
+    "risky": "Risky",
+    "notRisky": "Not Risky"
+  },
+
+  "history": {
+    "title": "Analysis History",
+    "totalChecks": "Total Checks",
+    "risky": "Risky",
+    "notRisky": "Not Risky",
+    "filterAll": "All ({{count}})",
+    "filterRisky": "Risky ({{count}})",
+    "filterSafe": "Not Risky ({{count}})",
+    "age": "Age {{age}} yrs",
+    "badgeRisky": "RISKY",
+    "badgeSafe": "SAFE",
+    "sectionPersonal": "Personal Data",
+    "sectionSymptoms": "Clinical Symptoms",
+    "sectionScore": "Analysis Score",
+    "sectionStage2": "Stage 2 Results (AI)",
+    "uvExposure": "UV Exposure",
+    "familyHistory": "Family History",
+    "moleCount": "Mole Count",
+    "diameter": "Diameter (mm)",
+    "itchy": "Itchy",
+    "bleeding": "Bleeding",
+    "asymmetric": "Asymmetric",
+    "roughBorder": "Rough Border",
+    "varyingColor": "Varying Color",
+    "evolution": "Evolution",
+    "rfScore": "RF Score (Stage 1)",
+    "lesionType": "Lesion Type",
+    "confidence": "Confidence",
+    "noHistory": "No analysis history yet",
+    "noFilterData": "No data for this filter",
+    "noImageAnalysis": "Image analysis not performed",
+    "loading": "Loading history...",
+    "yes": "Yes",
+    "no": "No",
+    "exists": "Exists",
+    "notExists": "Does not exist"
+  },
+
+  "profile": {
+    "title": "My Profile",
+    "totalChecks": "Total Checks",
+    "lastStatus": "Last Status",
+    "editName": "Edit Name",
+    "editNameSubtitle": "Update your account display name",
+    "changePassword": "Change Password",
+    "changePasswordSubtitle": "Make sure new password is at least 6 characters",
+    "email": "Email",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter full name...",
+    "saveName": "Save Name",
+    "saving": "Saving...",
+    "nameUpdated": "Name updated successfully!",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "savePassword": "Save Password",
+    "passwordUpdated": "Password changed successfully!",
+    "logout": "Logout",
+    "loading": "Loading profile...",
+    "error": {
+      "allRequired": "All fields are required.",
+      "passwordMismatch": "Passwords do not match.",
+      "minPassword": "New password must be at least 6 characters.",
+      "general": "An error occurred. Try again."
+    },
+    "risky": "Risky",
+    "notRisky": "Not Risky"
+  },
+
+  "questionnaire": {
+    "title": "Skin Analysis",
+    "step": "Step",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "processing": "Processing...",
+    "error": "An error occurred. Try again.",
+
+    "personal": {
+      "name": "Name",
+      "age": "Age",
+      "agePlaceholder": "Enter your age...",
+      "namePlaceholder": "Enter your name...",
+      "gender": "Gender",
+      "genderPlaceholder": "Male / Female",
+      "male": "Male",
+      "female": "Female",
+      "skinType": "Skin Type (Fitzpatrick scale)",
+      "skinTypePlaceholder": "Select your skin type",
+      "uvExposure": "How often are you exposed to sunlight?",
+      "uvLow": "Rarely (Low)",
+      "uvModerate": "Sometimes (Moderate)",
+      "uvHigh": "Often (High)",
+      "uvPlaceholder": "Select frequency...",
+      "familyHistory": "Is there a family history of skin cancer?",
+      "moleCount": "Estimated number of moles?",
+      "moleCountPlaceholder": "Enter number of moles.",
+      "exists": "Exists",
+      "notExists": "Not Exists"
+    },
+
+    "symptoms": {
+      "itchy": "Does it feel itchy?",
+      "bleeding": "Does it bleed often?",
+      "asymmetric": "Is the shape asymmetric?",
+      "roughBorder": "Are the borders irregular?",
+      "varyingColor": "Is the color uneven/varied?",
+      "evolution": "Has the size/shape changed over time?",
+      "diameter": "Lesion/mole diameter (mm)",
+      "yes": "yes",
+      "no": "no"
+    },
+
+    "rfResult": {
+      "heading": "Random Forest Detection Result",
+      "risky": "HIGH RISK",
+      "notRisky": "LOW RISK",
+      "probabilityLabel": "Risk Probability",
+      "advice": "Advice",
+      "adviceRisky": "Consult a dermatologist immediately for further evaluation of your skin condition.",
+      "adviceNotRisky": "Maintain a healthy lifestyle and continue to monitor any changes in your skin regularly.",
+      "highRiskNote": "Results indicate high risk. Proceed to <strong>Stage 2</strong> for image analysis using EfficientNet-B3."
+    },
+
+    "upload": {
+      "heading": "Skin Cancer Image Analysis",
+      "subtitle": "This page is intended for those who received a high-risk result in the previous stage. Please upload a photo of the suspicious skin area (lesion/mole) for analysis.",
+      "uploadLabel": "Upload your skin photo (Format: JPG & PNG)",
+      "dragDrop": "Drag and drop file here",
+      "limit": "Limit 200MB per file",
+      "uploadBtn": "Upload File",
+      "analyzing": "Analyzing image...",
+      "errorLowQuality": "Image is not clear enough for analysis. Make sure the photo is focused and close enough.",
+      "errorFailed": "Analysis failed.",
+      "errorGeneral": "An error occurred while analyzing. Try again.",
+      "resultHeading": "AI Detection Result",
+      "confidence": "Confidence Level",
+      "lesionCategory": "Lesion Category",
+      "dangerLevel": "Danger Level",
+      "disclaimer": "*Disclaimer: This result is AI-based and does not replace professional medical diagnosis."
+    },
+
+    "summary": {
+      "heading": "Analysis Report",
+      "highRisk": "HIGH RISK",
+      "notRisky": "NOT RISKY",
+      "demographics": "Demographics",
+      "aiScore": "AI Score — EfficientNet-B3",
+      "clinicalSymptoms": "Clinical Symptoms",
+      "rfScore": "Random Forest Score (Stage 1)",
+      "name": "Name",
+      "age": "Age",
+      "gender": "Gender",
+      "skinType": "Skin Type",
+      "uvExposure": "UV Exposure",
+      "familyHistory": "Family History",
+      "familyExists": "Exists",
+      "familyNotExists": "Does not exist",
+      "aiDetection": "AI Detection Result",
+      "confidenceLevel": "Confidence Level",
+      "lesionCategory": "Lesion Category",
+      "dangerLevel": "Danger Level",
+      "spontaneousItchy": "Spontaneous Itching",
+      "spreadBleeding": "Widespread Bleeding",
+      "asymmetric": "A – Asymmetric",
+      "roughBorder": "B – Rough Border",
+      "varyingColor": "C – Varying Color",
+      "diameter": "D – Diameter > 6mm",
+      "evolution": "E – Evolution / Change",
+      "rfScoreLabel": "RF Score",
+      "moleCount": "Mole Count",
+      "lesionDiameter": "Lesion Diameter",
+      "noImageAnalysis": "Image analysis not performed",
+      "years": "Years",
+      "yes": "Yes",
+      "notExists": "Does not exist"
+    }
+  },
+
+  "diseases": {
+    "akiec": {
+      "kategori": "Pre-cancerous Lesion",
+      "bahaya": "Medium Risk",
+      "pesan": "A doctor's examination is needed soon. Pre-cancerous lesions can develop into squamous cell carcinoma if untreated."
+    },
+    "bcc": {
+      "kategori": "Malignant Skin Cancer",
+      "bahaya": "High Risk",
+      "pesan": "See a Dermatologist (Sp. KK) immediately. Basal cell carcinoma requires prompt treatment but rarely spreads to other organs."
+    },
+    "bkl": {
+      "kategori": "Benign Lesion",
+      "bahaya": "Low Risk",
+      "pesan": "This lesion is generally benign. Continue to monitor and have regular check-ups with a doctor."
+    },
+    "df": {
+      "kategori": "Benign Lesion",
+      "bahaya": "Low Risk",
+      "pesan": "Dermatofibroma is a benign lesion that is generally harmless. Regular check-ups are still recommended."
+    },
+    "mel": {
+      "kategori": "Malignant Skin Cancer",
+      "bahaya": "Very High Risk",
+      "pesan": "VERY URGENT - See a Dermatologist (Sp. KK) immediately and request a biopsy. Melanoma is the most dangerous skin cancer requiring immediate treatment."
+    },
+    "nv": {
+      "kategori": "Benign Lesion",
+      "bahaya": "Low Risk",
+      "pesan": "Common mole that is generally benign. Monitor changes in shape, color, or size regularly."
+    },
+    "vasc": {
+      "kategori": "Vascular Lesion",
+      "bahaya": "Low Risk",
+      "pesan": "Vascular lesions are generally benign. Consult a doctor for further evaluation."
+    }
+  }
+}

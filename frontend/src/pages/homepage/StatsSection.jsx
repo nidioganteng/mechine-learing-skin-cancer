@@ -1,64 +1,61 @@
-const stats = [
-  { value: '7', label: 'Kelas Lesi Kulit', desc: 'melanoma, bcc, akiec, bkl, df, nv, vasc', accent: '#6CD0F6' },
-  { value: '2', label: 'Tahap Analisis', desc: 'kuesioner + analisis gambar terintegrasi', accent: '#BACED9' },
-  { value: '90%+', label: 'Akurasi Model', desc: 'EfficientNet-B3 pada dataset HAM10000', accent: '#6CD0F6' },
-  { value: '< 10s', label: 'Waktu Deteksi', desc: 'hasil analisis real-time di browser Anda', accent: '#BACED9' },
-]
+import { useTranslation } from 'react-i18next'
+
+const STAT_ACCENTS = ['#6CD0F6', '#BACED9', '#6CD0F6', '#BACED9']
 
 const diseases = [
-  { code: 'MEL', name: 'Melanoma', risk: 'Tinggi', dot: 'bg-red-400' },
-  { code: 'BCC', name: 'Basal Cell Carcinoma', risk: 'Tinggi', dot: 'bg-red-400' },
-  { code: 'AKIEC', name: 'Actinic Keratoses', risk: 'Sedang', dot: 'bg-orange-400' },
-  { code: 'BKL', name: 'Benign Keratosis', risk: 'Rendah', dot: 'bg-emerald-400' },
-  { code: 'DF', name: 'Dermatofibroma', risk: 'Rendah', dot: 'bg-emerald-400' },
-  { code: 'NV', name: 'Melanocytic Nevi', risk: 'Rendah', dot: 'bg-emerald-400' },
-  { code: 'VASC', name: 'Vascular Lesions', risk: 'Rendah', dot: 'bg-emerald-400' },
+  { code: 'MEL', name: 'Melanoma',              dot: 'bg-red-400',     riskKey: 'high' },
+  { code: 'BCC', name: 'Basal Cell Carcinoma',  dot: 'bg-red-400',     riskKey: 'high' },
+  { code: 'AKIEC', name: 'Actinic Keratoses',   dot: 'bg-orange-400',  riskKey: 'medium' },
+  { code: 'BKL', name: 'Benign Keratosis',      dot: 'bg-emerald-400', riskKey: 'low' },
+  { code: 'DF', name: 'Dermatofibroma',         dot: 'bg-emerald-400', riskKey: 'low' },
+  { code: 'NV', name: 'Melanocytic Nevi',       dot: 'bg-emerald-400', riskKey: 'low' },
+  { code: 'VASC', name: 'Vascular Lesions',     dot: 'bg-emerald-400', riskKey: 'low' },
 ]
 
 export default function StatsSection() {
+  const { t } = useTranslation()
+  const stats = t('stats.items', { returnObjects: true })
+
   return (
     <section className="px-[8%] py-16 lg:py-24 bg-white">
 
-      {/* Heading */}
       <div className="text-center mb-10 lg:mb-16">
         <span className="text-[#6CD0F6] text-sm font-semibold tracking-widest uppercase">
-          Kemampuan Sistem
+          {t('stats.badge')}
         </span>
         <h2 className="font-['Kalnia'] text-[30px] sm:text-[36px] lg:text-[42px] font-medium text-[#12283A] leading-[1.2] mt-3">
-          Didukung Data & Ilmu Pengetahuan
+          {t('stats.heading')}
         </h2>
       </div>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-10 lg:mb-16">
-        {stats.map((s, i) => (
-          <div
-            key={i}
-            className="text-center p-6 lg:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300"
-            style={{
-              backgroundColor: '#F2F8FC',
-              borderBottom: `4px solid ${s.accent}`,
-            }}
-          >
+        {stats.map((s, i) => {
+          const accent = STAT_ACCENTS[i]
+          return (
             <div
-              className="font-['Kalnia'] text-[40px] lg:text-[52px] font-medium leading-none mb-2"
-              style={{ color: s.accent === '#BACED9' ? '#5A8FA8' : s.accent }}
+              key={i}
+              className="text-center p-6 lg:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300"
+              style={{ backgroundColor: '#F2F8FC', borderBottom: `4px solid ${accent}` }}
             >
-              {s.value}
+              <div
+                className="font-['Kalnia'] text-[40px] lg:text-[52px] font-medium leading-none mb-2"
+                style={{ color: accent === '#BACED9' ? '#5A8FA8' : accent }}
+              >
+                {s.value}
+              </div>
+              <div className="text-[#12283A] font-semibold text-[13px] lg:text-[15px] mb-1">{s.label}</div>
+              <div className="text-[#4A6070] text-[12px] lg:text-[13px] leading-normal hidden sm:block">{s.desc}</div>
             </div>
-            <div className="text-[#12283A] font-semibold text-[13px] lg:text-[15px] mb-1">{s.label}</div>
-            <div className="text-[#4A6070] text-[12px] lg:text-[13px] leading-normal hidden sm:block">{s.desc}</div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
-      {/* 7 Kelas Penyakit */}
       <div className="rounded-3xl p-6 lg:p-10" style={{ backgroundColor: '#F2F8FC' }}>
         <h3 className="font-['Kalnia'] text-[22px] lg:text-[26px] font-medium text-[#12283A] mb-2">
-          7 Kelas yang Dapat Dideteksi
+          {t('stats.diseasesHeading')}
         </h3>
         <p className="text-[#4A6070] text-[14px] lg:text-[15px] mb-6 lg:mb-8">
-          Model EfficientNet-B3 dilatih pada dataset HAM10000 untuk mengenali ketujuh kategori lesi kulit berikut.
+          {t('stats.diseasesSubtitle')}
         </p>
         <div className="flex flex-wrap gap-2 lg:gap-3">
           {diseases.map((d, i) => (

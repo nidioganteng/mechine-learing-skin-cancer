@@ -1,36 +1,28 @@
 import { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const SKIN_SWATCHES = ['#FFE8D6', '#E8C49A', '#C4884C', '#8B6234', '#3C1E0A', '#1A0A04']
 
 export const CLASS_INFO = {
-  'Actinic keratoses (akiec)': {
-    kategori: 'Lesi Prakanker', bahaya: 'Resiko Sedang', dot: '#F59E0B', mendesak: false,
-    pesan: 'Perlu pemeriksaan dokter dalam waktu dekat. Lesi prakanker dapat berkembang menjadi karsinoma sel skuamosa jika tidak ditangani.',
-  },
-  'Basal cell carcinoma (bcc)': {
-    kategori: 'Kanker Kulit Ganas', bahaya: 'Resiko Tinggi', dot: '#EF4444', mendesak: true,
-    pesan: 'Segera periksakan ke Dokter Spesialis Kulit (Sp. KK). Basal cell carcinoma membutuhkan penanganan segera namun jarang menyebar ke organ lain.',
-  },
-  'Benign keratosis-like (bkl)': {
-    kategori: 'Lesi Jinak', bahaya: 'Resiko Rendah', dot: '#10B981', mendesak: false,
-    pesan: 'Lesi ini umumnya jinak. Tetap pantau dan lakukan pemeriksaan rutin ke dokter secara berkala.',
-  },
-  'Dermatofibroma (df)': {
-    kategori: 'Lesi Jinak', bahaya: 'Resiko Rendah', dot: '#10B981', mendesak: false,
-    pesan: 'Dermatofibroma adalah lesi jinak yang umumnya tidak berbahaya. Pemeriksaan rutin tetap dianjurkan.',
-  },
-  'Melanoma (mel)': {
-    kategori: 'Kanker Kulit Ganas', bahaya: 'Resiko Sangat Tinggi', dot: '#DC2626', mendesak: true,
-    pesan: 'Sangat MENDESAK - Segera periksakan ke Dokter Spesialis Kulit (Sp. KK) dan minta biopsi. Melanoma adalah kanker kulit paling berbahaya yang memerlukan penanganan segera.',
-  },
-  'Melanocytic nevi (nv)': {
-    kategori: 'Lesi Jinak', bahaya: 'Resiko Rendah', dot: '#10B981', mendesak: false,
-    pesan: 'Tahi lalat biasa yang umumnya jinak. Pantau perubahan bentuk, warna, atau ukuran secara berkala.',
-  },
-  'Vascular lesions (vasc)': {
-    kategori: 'Lesi Vaskular', bahaya: 'Resiko Rendah', dot: '#10B981', mendesak: false,
-    pesan: 'Lesi vaskular umumnya jinak. Konsultasikan ke dokter untuk evaluasi lebih lanjut.',
-  },
+  'Actinic keratoses (akiec)': { key: 'akiec', dot: '#F59E0B', mendesak: false },
+  'Basal cell carcinoma (bcc)': { key: 'bcc',  dot: '#EF4444', mendesak: true },
+  'Benign keratosis-like (bkl)': { key: 'bkl', dot: '#10B981', mendesak: false },
+  'Dermatofibroma (df)': { key: 'df',           dot: '#10B981', mendesak: false },
+  'Melanoma (mel)': { key: 'mel',               dot: '#DC2626', mendesak: true },
+  'Melanocytic nevi (nv)': { key: 'nv',         dot: '#10B981', mendesak: false },
+  'Vascular lesions (vasc)': { key: 'vasc',     dot: '#10B981', mendesak: false },
+}
+
+export function useClassInfo(kelasName) {
+  const { t } = useTranslation()
+  const raw = CLASS_INFO[kelasName]
+  if (!raw) return null
+  return {
+    ...raw,
+    kategori: t(`diseases.${raw.key}.kategori`),
+    bahaya:   t(`diseases.${raw.key}.bahaya`),
+    pesan:    t(`diseases.${raw.key}.pesan`),
+  }
 }
 
 export function CheckMark({ color = 'white' }) {
@@ -78,7 +70,7 @@ export function SelectInput({ value, onChange, options, placeholder }) {
   )
 }
 
-export function SkinTypeSelect({ value, onChange, options }) {
+export function SkinTypeSelect({ value, onChange, options, placeholder }) {
   const [open, setOpen] = useState(false)
   const ref = useRef()
   const selectedIdx = options.findIndex(o => o === value)
@@ -96,7 +88,7 @@ export function SkinTypeSelect({ value, onChange, options }) {
       <button type="button" onClick={() => setOpen(o => !o)}
         className="w-full px-4 py-3 rounded-xl border border-[#D8E8F0] text-[14px] bg-white outline-none flex items-center justify-between focus:border-[#7B9DB8]">
         <span className={`flex items-center gap-3 ${!value ? 'text-[#A8BEC9]' : 'text-[#12283A]'}`}>
-          {value || 'Pilih tipe kulit anda'}
+          {value || placeholder || 'Pilih tipe kulit anda'}
           {selectedIdx >= 0 && (
             <span className="w-8 h-4 rounded-sm inline-block border border-gray-200"
               style={{ backgroundColor: SKIN_SWATCHES[selectedIdx] ?? '#ccc' }} />
@@ -123,6 +115,7 @@ export function SkinTypeSelect({ value, onChange, options }) {
 }
 
 export function YaTidak({ value, onChange }) {
+  const { t } = useTranslation()
   return (
     <div className="flex items-center gap-8 mt-2">
       <button type="button" onClick={() => onChange('Yes')} className="flex items-center gap-2.5">
@@ -131,7 +124,7 @@ export function YaTidak({ value, onChange }) {
         }`}>
           {value === 'Yes' && <CheckMark />}
         </div>
-        <span className="text-[14px] text-[#12283A]">ya</span>
+        <span className="text-[14px] text-[#12283A]">{t('questionnaire.symptoms.yes')}</span>
       </button>
       <button type="button" onClick={() => onChange('No')} className="flex items-center gap-2.5">
         <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-colors ${
@@ -139,13 +132,14 @@ export function YaTidak({ value, onChange }) {
         }`}>
           {value === 'No' && <CheckMark />}
         </div>
-        <span className="text-[14px] text-[#12283A]">tidak</span>
+        <span className="text-[14px] text-[#12283A]">{t('questionnaire.symptoms.no')}</span>
       </button>
     </div>
   )
 }
 
 export function AdaTidakAda({ value, onChange }) {
+  const { t } = useTranslation()
   return (
     <div className="flex items-center gap-8 mt-2">
       <button type="button" onClick={() => onChange('Yes')} className="flex items-center gap-2.5">
@@ -154,7 +148,7 @@ export function AdaTidakAda({ value, onChange }) {
         }`}>
           {value === 'Yes' && <CheckMark />}
         </div>
-        <span className="text-[14px] text-[#12283A]">ada</span>
+        <span className="text-[14px] text-[#12283A]">{t('questionnaire.personal.exists')}</span>
       </button>
       <button type="button" onClick={() => onChange('No')} className="flex items-center gap-2.5">
         <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-colors ${
@@ -162,7 +156,7 @@ export function AdaTidakAda({ value, onChange }) {
         }`}>
           {value === 'No' && <CheckMark />}
         </div>
-        <span className="text-[14px] text-[#12283A]">tidak ada</span>
+        <span className="text-[14px] text-[#12283A]">{t('questionnaire.personal.notExists')}</span>
       </button>
     </div>
   )
