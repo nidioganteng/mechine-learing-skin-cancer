@@ -1,64 +1,78 @@
+import { useTranslation } from 'react-i18next'
 import { Label, TextInput, SelectInput, SkinTypeSelect, AdaTidakAda } from './Atoms'
 
 export default function StepDataDiri({ form, options, onInput, set }) {
+  const { t } = useTranslation()
+
   const genderOptions = options.genders.length
-    ? options.genders.map(g => ({ value: g, label: g }))
-    : [{ value: 'Male', label: 'Pria' }, { value: 'Female', label: 'Wanita' }]
+    ? options.genders.map(g => ({
+        value: g,
+        label: g === 'Male' ? t('questionnaire.personal.male') : g === 'Female' ? t('questionnaire.personal.female') : g,
+      }))
+    : [
+        { value: 'Male',   label: t('questionnaire.personal.male') },
+        { value: 'Female', label: t('questionnaire.personal.female') },
+      ]
 
   const sunOptions = options.sun_exposures.length
     ? options.sun_exposures.map(s => ({ value: s, label: s }))
     : [
-        { value: 'Low',      label: 'Jarang (Low)' },
-        { value: 'Moderate', label: 'Sedang (Moderate)' },
-        { value: 'High',     label: 'Sering (High)' },
+        { value: 'Low',      label: t('questionnaire.personal.uvLow') },
+        { value: 'Moderate', label: t('questionnaire.personal.uvModerate') },
+        { value: 'High',     label: t('questionnaire.personal.uvHigh') },
       ]
 
   return (
-    <div className="flex gap-0">
-      <div className="flex-1 flex flex-col gap-5 pr-8">
+    <div className="flex flex-col md:flex-row gap-5 md:gap-0">
+      <div className="flex-1 flex flex-col gap-5 md:pr-8">
         <div className="flex gap-4">
           <div className="flex-1">
-            <Label>Nama</Label>
-            <TextInput name="nama" value={form.nama} onChange={onInput} placeholder="masukkan nama anda..." readOnly />
+            <Label>{t('questionnaire.personal.name')}</Label>
+            <TextInput name="nama" value={form.nama} onChange={onInput}
+              placeholder={t('questionnaire.personal.namePlaceholder')} readOnly />
           </div>
           <div className="flex-1">
-            <Label>Umur</Label>
-            <TextInput name="usia" value={form.usia} onChange={onInput} placeholder="masukkan umur anda..." type="number" />
+            <Label>{t('questionnaire.personal.age')}</Label>
+            <TextInput name="usia" value={form.usia} onChange={onInput}
+              placeholder={t('questionnaire.personal.agePlaceholder')} type="number" />
           </div>
         </div>
 
         <div>
-          <Label>Jenis Kelamin</Label>
-          <SelectInput value={form.gender} onChange={set('gender')} options={genderOptions} placeholder="Pria / Wanita" />
+          <Label>{t('questionnaire.personal.gender')}</Label>
+          <SelectInput value={form.gender} onChange={set('gender')} options={genderOptions}
+            placeholder={t('questionnaire.personal.genderPlaceholder')} />
         </div>
 
         <div>
-          <Label>Tipe kulit (skala Fitzpatrick)</Label>
+          <Label>{t('questionnaire.personal.skinType')}</Label>
           <SkinTypeSelect
             value={form.tipe_kulit}
             onChange={set('tipe_kulit')}
             options={options.skin_types.length ? options.skin_types : ['Type I', 'Type II', 'Type III', 'Type IV', 'Type V']}
+            placeholder={t('questionnaire.personal.skinTypePlaceholder')}
           />
         </div>
       </div>
 
-      <div className="w-px bg-gray-200 self-stretch" />
+      <div className="hidden md:block w-px bg-gray-200 self-stretch" />
 
-      <div className="flex-1 flex flex-col gap-5 pl-8">
+      <div className="flex-1 flex flex-col gap-5 md:pl-8">
         <div>
-          <Label>Seberapa sering anda terpapar matahari?</Label>
-          <SelectInput value={form.paparan_uv} onChange={set('paparan_uv')} options={sunOptions} placeholder="Pilih frekuensi..." />
+          <Label>{t('questionnaire.personal.uvExposure')}</Label>
+          <SelectInput value={form.paparan_uv} onChange={set('paparan_uv')} options={sunOptions}
+            placeholder={t('questionnaire.personal.uvPlaceholder')} />
         </div>
 
         <div>
-          <Label>Apakah ada riwayat kanker kulit di keluarga anda?</Label>
+          <Label>{t('questionnaire.personal.familyHistory')}</Label>
           <AdaTidakAda value={form.riwayat_keluarga} onChange={set('riwayat_keluarga')} />
         </div>
 
         <div>
-          <Label>Perkiraan jumlah tahi lalat?</Label>
+          <Label>{t('questionnaire.personal.moleCount')}</Label>
           <TextInput name="jumlah_tahi_lalat" value={form.jumlah_tahi_lalat} onChange={onInput}
-            placeholder="masukkan jumlah tahi lalat." type="number" />
+            placeholder={t('questionnaire.personal.moleCountPlaceholder')} type="number" />
         </div>
       </div>
     </div>
