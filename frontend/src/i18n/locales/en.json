@@ -32,7 +32,7 @@
         "desc": "Upload a photo of your skin lesion. EfficientNet-B3 analyzes and classifies into 7 diagnostic categories with CLAHE preprocessing for precise results."
       },
       {
-        "tag": "Low · Medium · High Risk",
+        "tag": "At Risk · Not at Risk",
         "title": "Results & Recommendations",
         "desc": "Get a complete report — risk level, detected lesion class, model confidence score, and medical advice tailored to your analysis results."
       }
@@ -172,21 +172,21 @@
     "noHistory": "No analysis history yet",
     "startDetection": "START DETECTION",
     "loading": "Loading data...",
-    "risky": "Risky",
-    "notRisky": "Not Risky"
+    "risky": "At Risk",
+    "notRisky": "Not at Risk"
   },
 
   "history": {
     "title": "Analysis History",
     "totalChecks": "Total Checks",
-    "risky": "Risky",
-    "notRisky": "Not Risky",
+    "risky": "At Risk",
+    "notRisky": "Not at Risk",
     "filterAll": "All ({{count}})",
-    "filterRisky": "Risky ({{count}})",
-    "filterSafe": "Not Risky ({{count}})",
+    "filterRisky": "At Risk ({{count}})",
+    "filterSafe": "Not at Risk ({{count}})",
     "age": "Age {{age}} yrs",
-    "badgeRisky": "RISKY",
-    "badgeSafe": "SAFE",
+    "badgeRisky": "AT RISK",
+    "badgeSafe": "NOT AT RISK",
     "sectionPersonal": "Personal Data",
     "sectionSymptoms": "Clinical Symptoms",
     "sectionScore": "Analysis Score",
@@ -241,8 +241,8 @@
       "minPassword": "New password must be at least 6 characters.",
       "general": "An error occurred. Try again."
     },
-    "risky": "Risky",
-    "notRisky": "Not Risky"
+    "risky": "At Risk",
+    "notRisky": "Not at Risk"
   },
 
   "questionnaire": {
@@ -291,13 +291,13 @@
 
     "rfResult": {
       "heading": "Random Forest Detection Result",
-      "risky": "HIGH RISK",
-      "notRisky": "LOW RISK",
+      "risky": "AT RISK",
+      "notRisky": "NOT AT RISK",
       "probabilityLabel": "Risk Probability",
-      "advice": "Advice",
-      "adviceRisky": "Consult a dermatologist immediately for further evaluation of your skin condition.",
-      "adviceNotRisky": "Maintain a healthy lifestyle and continue to monitor any changes in your skin regularly.",
-      "highRiskNote": "Results indicate high risk. Proceed to <strong>Stage 2</strong> for image analysis using EfficientNet-B3."
+      "advice": "Recommendation",
+      "adviceRisky": "Please consult a dermatologist promptly for a thorough clinical evaluation of your skin condition.",
+      "adviceNotRisky": "Maintain a healthy lifestyle and monitor any changes in your skin regularly as a preventive measure.",
+      "highRiskNote": "Your result indicates an at-risk condition. Please proceed to <strong>Stage 2</strong> for lesion image analysis using EfficientNet-B3."
     },
 
     "upload": {
@@ -320,8 +320,8 @@
 
     "summary": {
       "heading": "Analysis Report",
-      "highRisk": "HIGH RISK",
-      "notRisky": "NOT RISKY",
+      "highRisk": "AT RISK",
+      "notRisky": "NOT AT RISK",
       "demographics": "Demographics",
       "aiScore": "AI Score — EfficientNet-B3",
       "clinicalSymptoms": "Clinical Symptoms",
