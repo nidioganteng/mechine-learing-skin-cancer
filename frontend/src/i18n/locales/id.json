@@ -314,7 +314,6 @@
       "resultHeading": "Hasil Deteksi AI",
       "confidence": "Tingkat Keyakinan (Confidence)",
       "lesionCategory": "Kategori Lesi",
-      "dangerLevel": "Tingkat Bahaya",
       "disclaimer": "*Disclaimer"
     },
 
@@ -358,37 +357,30 @@
   "diseases": {
     "akiec": {
       "kategori": "Lesi Prakanker",
-      "bahaya": "Resiko Sedang",
       "pesan": "Perlu pemeriksaan dokter dalam waktu dekat. Lesi prakanker dapat berkembang menjadi karsinoma sel skuamosa jika tidak ditangani."
     },
     "bcc": {
       "kategori": "Kanker Kulit Ganas",
-      "bahaya": "Resiko Tinggi",
       "pesan": "Segera periksakan ke Dokter Spesialis Kulit (Sp. KK). Basal cell carcinoma membutuhkan penanganan segera namun jarang menyebar ke organ lain."
     },
     "bkl": {
       "kategori": "Lesi Jinak",
-      "bahaya": "Resiko Rendah",
       "pesan": "Lesi ini umumnya jinak. Tetap pantau dan lakukan pemeriksaan rutin ke dokter secara berkala."
     },
     "df": {
       "kategori": "Lesi Jinak",
-      "bahaya": "Resiko Rendah",
       "pesan": "Dermatofibroma adalah lesi jinak yang umumnya tidak berbahaya. Pemeriksaan rutin tetap dianjurkan."
     },
     "mel": {
       "kategori": "Kanker Kulit Ganas",
-      "bahaya": "Resiko Sangat Tinggi",
       "pesan": "Sangat MENDESAK - Segera periksakan ke Dokter Spesialis Kulit (Sp. KK) dan minta biopsi. Melanoma adalah kanker kulit paling berbahaya yang memerlukan penanganan segera."
     },
     "nv": {
       "kategori": "Lesi Jinak",
-      "bahaya": "Resiko Rendah",
       "pesan": "Tahi lalat biasa yang umumnya jinak. Pantau perubahan bentuk, warna, atau ukuran secara berkala."
     },
     "vasc": {
       "kategori": "Lesi Vaskular",
-      "bahaya": "Resiko Rendah",
       "pesan": "Lesi vaskular umumnya jinak. Konsultasikan ke dokter untuk evaluasi lebih lanjut."
     }
   }

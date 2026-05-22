@@ -35,14 +35,9 @@ function ResultCard({ result }) {
       <div className="flex justify-between text-[13px]">
         <div className="flex flex-col gap-1 text-[#4A6070]">
           <span>{t('questionnaire.upload.lesionCategory')}</span>
-          <span>{t('questionnaire.upload.dangerLevel')}</span>
         </div>
         <div className="flex flex-col gap-1 items-end">
           <span className="font-bold text-[#12283A]">{info.kategori}</span>
-          <span className="flex items-center gap-1.5 font-bold text-[#12283A]">
-            <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: info.dot }} />
-            {info.bahaya}
-          </span>
         </div>
       </div>
 

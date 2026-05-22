@@ -20,7 +20,6 @@ export function useClassInfo(kelasName) {
   return {
     ...raw,
     kategori: t(`diseases.${raw.key}.kategori`),
-    bahaya:   t(`diseases.${raw.key}.bahaya`),
     pesan:    t(`diseases.${raw.key}.pesan`),
   }
 }
