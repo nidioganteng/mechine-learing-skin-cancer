@@ -21,7 +21,7 @@ from database.db_connection import get_db_connection
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'yourskin_secret_key_super_aman')
-CORS(app, origins=['https://yourskin-eight.vercel.app'], supports_credentials=True)
+CORS(app, origins='*', supports_credentials=False)
 
 MONTHS_ID = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
              'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
