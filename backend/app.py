@@ -5,6 +5,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
+from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 import pandas as pd
 import pickle
@@ -19,7 +20,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from database.db_connection import get_db_connection
 
 app = Flask(__name__)
-app.secret_key = 'yourskin_secret_key_super_aman'
+app.secret_key = os.getenv('SECRET_KEY', 'yourskin_secret_key_super_aman')
+CORS(app, origins=['https://yourskin-eight.vercel.app'], supports_credentials=True)
 
 MONTHS_ID = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
              'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
