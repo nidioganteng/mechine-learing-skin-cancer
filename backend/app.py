@@ -43,6 +43,14 @@ def handle_options():
 MONTHS_ID = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
              'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
+def get_current_user_id():
+    if 'id_user' in session:
+        return session['id_user']
+    user_id = request.headers.get('X-User-Id')
+    if user_id and str(user_id).isdigit():
+        return int(user_id)
+    return None
+
 # ==========================================
 # LOAD MODEL TAHAP 1 (Random Forest)
 # ==========================================
@@ -97,7 +105,8 @@ def api_form_options():
 # ==========================================
 @app.route('/api/prediksi_tahap1', methods=['POST'])
 def api_prediksi_tahap1():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "pesan": "Sesi berakhir, silakan login kembali."}), 401
 
     data = request.get_json()
@@ -105,7 +114,6 @@ def api_prediksi_tahap1():
         return jsonify({"status": "error", "pesan": "Data tidak valid."}), 400
 
     try:
-        id_user = session['id_user']
 
         usia                 = int(data.get('usia', 0))
         gender_raw           = data.get('gender', '')
@@ -237,11 +245,11 @@ def api_register():
 
 @app.route('/api/dashboard')
 def api_dashboard():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "message": "Belum login."}), 401
 
-    id_user = session['id_user']
-    nama_lengkap = session['nama_lengkap']
+    nama_lengkap = ''
     total_pengecekan = 0
     status_terakhir = None
     riwayat_singkat = []
@@ -249,6 +257,11 @@ def api_dashboard():
     conn = get_db_connection()
     if conn:
         cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT nama_lengkap FROM users WHERE id_user = %s", (id_user,))
+        user_row = cursor.fetchone()
+        if user_row:
+            nama_lengkap = user_row['nama_lengkap']
 
         cursor.execute("SELECT COUNT(*) as total FROM riwayat_tahap1 WHERE id_user = %s", (id_user,))
         row = cursor.fetchone()
@@ -312,10 +325,9 @@ def api_dashboard():
 # ==========================================
 @app.route('/api/riwayat')
 def api_riwayat():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "message": "Belum login."}), 401
-
-    id_user = session['id_user']
     riwayat = []
 
     conn = get_db_connection()
@@ -378,10 +390,9 @@ def api_riwayat():
 # ==========================================
 @app.route('/api/profil')
 def api_profil():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "message": "Belum login."}), 401
-
-    id_user = session['id_user']
     conn = get_db_connection()
     if not conn:
         return jsonify({"status": "error", "message": "Gagal koneksi database."}), 500
@@ -420,15 +431,14 @@ def api_profil():
 
 @app.route('/api/profil/update', methods=['POST'])
 def api_profil_update():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "message": "Belum login."}), 401
 
     data = request.get_json()
     nama_baru = (data.get('nama_lengkap') or '').strip()
     if not nama_baru:
         return jsonify({"status": "error", "message": "Nama tidak boleh kosong."}), 400
-
-    id_user = session['id_user']
     conn = get_db_connection()
     if not conn:
         return jsonify({"status": "error", "message": "Gagal koneksi database."}), 500
@@ -438,14 +448,13 @@ def api_profil_update():
     conn.commit()
     cursor.close()
     conn.close()
-
-    session['nama_lengkap'] = nama_baru
     return jsonify({"status": "success", "message": "Nama berhasil diperbarui."})
 
 
 @app.route('/api/profil/password', methods=['POST'])
 def api_profil_password():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({"status": "error", "message": "Belum login."}), 401
 
     data = request.get_json()
@@ -455,8 +464,6 @@ def api_profil_password():
         return jsonify({"status": "error", "message": "Semua field wajib diisi."}), 400
     if len(password_baru) < 6:
         return jsonify({"status": "error", "message": "Password baru minimal 6 karakter."}), 400
-
-    id_user = session['id_user']
     conn = get_db_connection()
     if not conn:
         return jsonify({"status": "error", "message": "Gagal koneksi database."}), 500
@@ -732,7 +739,8 @@ def analisis_gambar():
 
 @app.route('/prediksi_tahap2', methods=['POST'])
 def prediksi_tahap2():
-    if 'id_user' not in session:
+    id_user = get_current_user_id()
+    if not id_user:
         return jsonify({'status': 'error', 'pesan': 'Sesi berakhir, silakan login kembali.'}), 401
     if 'file' not in request.files:
         return jsonify({'status': 'error', 'pesan': 'Tidak ada file gambar yang diunggah.'})
@@ -746,7 +754,7 @@ def prediksi_tahap2():
         upload_folder = os.path.join('static', 'uploads')
         os.makedirs(upload_folder, exist_ok=True)
         filename = secure_filename(file.filename)
-        filename = f"{session['id_user']}_{filename}"
+        filename = f"{id_user}_{filename}"
         filepath = os.path.join(upload_folder, filename)
         file.save(filepath)
 
@@ -786,7 +794,6 @@ def prediksi_tahap2():
         # ==========================================
         # SIMPAN HASIL TAHAP 2 KE DATABASE
         # ==========================================
-        id_user = session['id_user']
         conn = get_db_connection()
         if conn:
             cursor = conn.cursor(dictionary=True)

@@ -5,6 +5,18 @@ const api = axios.create({
   withCredentials: false,
 })
 
+export function getUser() {
+  try { return JSON.parse(localStorage.getItem('user') || 'null') } catch { return null }
+}
+export function setUser(user) { localStorage.setItem('user', JSON.stringify(user)) }
+export function clearUser() { localStorage.removeItem('user') }
+
+api.interceptors.request.use(config => {
+  const user = getUser()
+  if (user?.id_user) config.headers['X-User-Id'] = user.id_user
+  return config
+})
+
 export async function login(email, password) {
   const res = await api.post('/api/login', { email, password })
   return res.data

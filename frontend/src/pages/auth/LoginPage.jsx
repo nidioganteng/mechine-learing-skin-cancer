@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { login } from '../../services/api'
+import { login, setUser } from '../../services/api'
 import LanguageSwitcher from '../../components/LanguageSwitcher'
 
 export default function LoginPage() {
@@ -25,7 +25,8 @@ export default function LoginPage() {
     }
     setIsLoading(true)
     try {
-      await login(form.email, form.password)
+      const res = await login(form.email, form.password)
+      setUser(res.user)
       navigate('/dashboard')
     } catch (err) {
       const msg = err.response?.data?.message || t('auth.login.errorGeneral')

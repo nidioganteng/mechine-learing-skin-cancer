@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import AppLayout from '../../components/AppLayout'
-import { getProfil, updateProfil, updatePassword } from '../../services/api'
-import axios from 'axios'
+import { getProfil, updateProfil, updatePassword, clearUser } from '../../services/api'
 
 function InputField({ label, value, onChange, type = 'text', placeholder, readOnly = false }) {
   return (
@@ -111,7 +110,7 @@ export default function ProfilPage() {
   }
 
   async function handleLogout() {
-    try { await axios.get('/logout', { withCredentials: true }) } catch {}
+    clearUser()
     navigate('/login')
   }
 
