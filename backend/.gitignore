@@ -15,5 +15,3 @@ __pycache__/
 
 # Folder Uploads (Biar foto percobaan tidak ikut terupload)
 static/uploads/
-
-models/
