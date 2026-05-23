@@ -515,7 +515,7 @@ def api_login():
     return jsonify({
         "status": "success",
         "message": "Login berhasil.",
-        "user": {"nama_lengkap": user['nama_lengkap']},
+        "user": {"id_user": user['id_user'], "nama_lengkap": user['nama_lengkap']},
     })
 
 
