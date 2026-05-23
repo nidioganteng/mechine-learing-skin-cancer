@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import AppLayout from '../../components/AppLayout'
-import { getProfil, updateProfil, updatePassword, clearUser } from '../../services/api'
+import { getProfil, updateProfil, updatePassword, clearUser, getUser } from '../../services/api'
 
 function InputField({ label, value, onChange, type = 'text', placeholder, readOnly = false }) {
   return (
@@ -55,6 +55,11 @@ export default function ProfilPage() {
   const [showPwBaru,   setShowPwBaru]   = useState(false)
 
   useEffect(() => {
+    const localUser = getUser()
+    if (localUser) {
+      setProfil(p => p ?? { user: localUser, stats: { total_pengecekan: 0, status_terakhir: null } })
+      setNamaEdit(localUser.nama_lengkap ?? '')
+    }
     getProfil()
       .then(res => {
         if (res.status === 'success') { setProfil(res); setNamaEdit(res.user.nama_lengkap) }

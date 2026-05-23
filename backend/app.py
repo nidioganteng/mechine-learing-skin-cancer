@@ -21,12 +21,12 @@ from database.db_connection import get_db_connection
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'yourskin_secret_key_super_aman')
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, allow_headers=["Content-Type", "Authorization", "X-User-Id"])
 
 @app.after_request
 def add_cors_headers(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-User-Id'
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
     return response
 
@@ -36,7 +36,7 @@ def handle_options():
         from flask import Response
         res = Response()
         res.headers['Access-Control-Allow-Origin'] = '*'
-        res.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+        res.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-User-Id'
         res.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
         return res
 
@@ -515,7 +515,7 @@ def api_login():
     return jsonify({
         "status": "success",
         "message": "Login berhasil.",
-        "user": {"id_user": user['id_user'], "nama_lengkap": user['nama_lengkap']},
+        "user": {"id_user": user['id_user'], "nama_lengkap": user['nama_lengkap'], "email": user['email']},
     })
 
 
