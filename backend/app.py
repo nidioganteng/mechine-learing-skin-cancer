@@ -1,8 +1,20 @@
 import os
 import sys
+import urllib.request
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['KERAS_BACKEND'] = 'tensorflow'
+
+def download_if_lfs_pointer(path, github_raw_url):
+    """Download file from GitHub if it's still an LFS pointer (< 1KB)."""
+    if os.path.exists(path) and os.path.getsize(path) > 1024:
+        return
+    print(f"📥 Downloading {os.path.basename(path)} from GitHub LFS...")
+    try:
+        urllib.request.urlretrieve(github_raw_url, path)
+        print(f"✅ Downloaded {os.path.basename(path)} ({os.path.getsize(path) // 1024 // 1024}MB)")
+    except Exception as e:
+        print(f"❌ Download failed: {e}")
 
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
 from flask_cors import CORS
@@ -74,6 +86,10 @@ except Exception as e:
 try:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     model_path_t2 = os.path.join(BASE_DIR, 'models', 'model_tahap2_en.keras')
+    download_if_lfs_pointer(
+        model_path_t2,
+        "https://github.com/nidioganteng/mechine-learing-skin-cancer/raw/fresh-main/backend/models/model_tahap2_en.keras"
+    )
     if os.path.exists(model_path_t2):
         model_tahap2 = keras.models.load_model(model_path_t2, compile=False)
         print("✅ Model Tahap 2 (EfficientNet-B3) berhasil dimuat!")
