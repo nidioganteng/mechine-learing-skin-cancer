@@ -266,9 +266,9 @@
       "skinType": "Tipe kulit (skala Fitzpatrick)",
       "skinTypePlaceholder": "Pilih tipe kulit anda",
       "uvExposure": "Seberapa sering anda terpapar matahari?",
-      "uvLow": "Jarang (Low)",
-      "uvModerate": "Sedang (Moderate)",
-      "uvHigh": "Sering (High)",
+      "uvLow": "Jarang",
+      "uvModerate": "Sedang",
+      "uvHigh": "Sering",
       "uvPlaceholder": "Pilih frekuensi...",
       "familyHistory": "Apakah ada riwayat kanker kulit di keluarga anda?",
       "moleCount": "Perkiraan jumlah tahi lalat?",
@@ -304,9 +304,9 @@
       "heading": "Analisis citra kanker kulit",
       "subtitle": "Halaman ini dikhususkan untuk anda yang mendapatkan hasil berisiko tinggi pada tahap sebelumnya, silahkan unggah foto area kulit (lesi/tahi lalat) yang mencurigakan untuk dianalisis",
       "uploadLabel": "Unggah foto kulit anda (Format: JPG & PNG)",
-      "dragDrop": "Drag and drop file here",
-      "limit": "Limit 200MB per file",
-      "uploadBtn": "Upload File",
+      "dragDrop": "Seret dan taruh file di sini",
+      "limit": "Batas 200MB per file",
+      "uploadBtn": "Unggah File",
       "analyzing": "Menganalisis gambar...",
       "errorLowQuality": "Gambar kurang jelas untuk dianalisis. Pastikan foto fokus dan cukup dekat.",
       "errorFailed": "Analisis gagal.",
@@ -356,30 +356,37 @@
 
   "diseases": {
     "akiec": {
+      "nama": "Keratosis Aktinik (akiec)",
       "kategori": "Lesi Prakanker",
       "pesan": "Perlu pemeriksaan dokter dalam waktu dekat. Lesi prakanker dapat berkembang menjadi karsinoma sel skuamosa jika tidak ditangani."
     },
     "bcc": {
+      "nama": "Karsinoma Sel Basal (bcc)",
       "kategori": "Kanker Kulit Ganas",
-      "pesan": "Segera periksakan ke Dokter Spesialis Kulit (Sp. KK). Basal cell carcinoma membutuhkan penanganan segera namun jarang menyebar ke organ lain."
+      "pesan": "Segera periksakan ke Dokter Spesialis Kulit (Sp. KK). Karsinoma sel basal membutuhkan penanganan segera namun jarang menyebar ke organ lain."
     },
     "bkl": {
+      "nama": "Keratosis Jinak (bkl)",
       "kategori": "Lesi Jinak",
       "pesan": "Lesi ini umumnya jinak. Tetap pantau dan lakukan pemeriksaan rutin ke dokter secara berkala."
     },
     "df": {
+      "nama": "Dermatofibroma (df)",
       "kategori": "Lesi Jinak",
       "pesan": "Dermatofibroma adalah lesi jinak yang umumnya tidak berbahaya. Pemeriksaan rutin tetap dianjurkan."
     },
     "mel": {
+      "nama": "Melanoma (mel)",
       "kategori": "Kanker Kulit Ganas",
       "pesan": "Sangat MENDESAK - Segera periksakan ke Dokter Spesialis Kulit (Sp. KK) dan minta biopsi. Melanoma adalah kanker kulit paling berbahaya yang memerlukan penanganan segera."
     },
     "nv": {
+      "nama": "Nevus Melanositik (nv)",
       "kategori": "Lesi Jinak",
       "pesan": "Tahi lalat biasa yang umumnya jinak. Pantau perubahan bentuk, warna, atau ukuran secara berkala."
     },
     "vasc": {
+      "nama": "Lesi Vaskular (vasc)",
       "kategori": "Lesi Vaskular",
       "pesan": "Lesi vaskular umumnya jinak. Konsultasikan ke dokter untuk evaluasi lebih lanjut."
     }

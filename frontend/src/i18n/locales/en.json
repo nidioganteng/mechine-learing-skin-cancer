@@ -356,30 +356,37 @@
 
   "diseases": {
     "akiec": {
+      "nama": "Actinic Keratoses (akiec)",
       "kategori": "Pre-cancerous Lesion",
       "pesan": "A doctor's examination is needed soon. Pre-cancerous lesions can develop into squamous cell carcinoma if untreated."
     },
     "bcc": {
+      "nama": "Basal Cell Carcinoma (bcc)",
       "kategori": "Malignant Skin Cancer",
-      "pesan": "See a Dermatologist (Sp. KK) immediately. Basal cell carcinoma requires prompt treatment but rarely spreads to other organs."
+      "pesan": "See a Dermatologist immediately. Basal cell carcinoma requires prompt treatment but rarely spreads to other organs."
     },
     "bkl": {
+      "nama": "Benign Keratosis-like (bkl)",
       "kategori": "Benign Lesion",
       "pesan": "This lesion is generally benign. Continue to monitor and have regular check-ups with a doctor."
     },
     "df": {
+      "nama": "Dermatofibroma (df)",
       "kategori": "Benign Lesion",
       "pesan": "Dermatofibroma is a benign lesion that is generally harmless. Regular check-ups are still recommended."
     },
     "mel": {
+      "nama": "Melanoma (mel)",
       "kategori": "Malignant Skin Cancer",
-      "pesan": "VERY URGENT - See a Dermatologist (Sp. KK) immediately and request a biopsy. Melanoma is the most dangerous skin cancer requiring immediate treatment."
+      "pesan": "VERY URGENT - See a Dermatologist immediately and request a biopsy. Melanoma is the most dangerous skin cancer requiring immediate treatment."
     },
     "nv": {
+      "nama": "Melanocytic Nevi (nv)",
       "kategori": "Benign Lesion",
       "pesan": "Common mole that is generally benign. Monitor changes in shape, color, or size regularly."
     },
     "vasc": {
+      "nama": "Vascular Lesions (vasc)",
       "kategori": "Vascular Lesion",
       "pesan": "Vascular lesions are generally benign. Consult a doctor for further evaluation."
     }

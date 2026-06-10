@@ -34,6 +34,19 @@ export default function StepRingkasan({ form, result, imageResult }) {
   const classInfo     = useClassInfo(imageResult?.kelas)
   const diameterNum   = parseFloat(form.diameter_mm) || 0
 
+  const genderLabel = form.gender === 'Male'
+    ? t('questionnaire.personal.male')
+    : form.gender === 'Female'
+    ? t('questionnaire.personal.female')
+    : form.gender || '-'
+
+  const uvLabelMap = {
+    Low:      t('questionnaire.personal.uvLow'),
+    Moderate: t('questionnaire.personal.uvModerate'),
+    High:     t('questionnaire.personal.uvHigh'),
+  }
+  const uvLabel = uvLabelMap[form.paparan_uv] ?? form.paparan_uv ?? '-'
+
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-wrap items-center gap-3">
@@ -49,9 +62,9 @@ export default function StepRingkasan({ form, result, imageResult }) {
         <SectionCard title={t('questionnaire.summary.demographics')}>
           <Row label={t('questionnaire.summary.name')}       value={form.nama || '-'} />
           <Row label={t('questionnaire.summary.age')}        value={form.usia ? `${form.usia} ${t('questionnaire.summary.years')}` : '-'} />
-          <Row label={t('questionnaire.summary.gender')}     value={form.gender || '-'} />
+          <Row label={t('questionnaire.summary.gender')}     value={genderLabel} />
           <Row label={t('questionnaire.summary.skinType')}   value={form.tipe_kulit || '-'} />
-          <Row label={t('questionnaire.summary.uvExposure')} value={form.paparan_uv || '-'} />
+          <Row label={t('questionnaire.summary.uvExposure')} value={uvLabel} />
           <div className="flex justify-between items-center py-2">
             <span className="text-[13px] text-gray-500">{t('questionnaire.summary.familyHistory')}</span>
             {form.riwayat_keluarga === 'Yes'
@@ -66,7 +79,7 @@ export default function StepRingkasan({ form, result, imageResult }) {
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[15px] font-bold text-[#12283A]">{t('questionnaire.summary.aiDetection')}</span>
                 <span className="px-3 py-1 rounded-full text-[12px] font-semibold text-white bg-[#12283A]">
-                  {imageResult.kelas}
+                  {t(`diseases.${classInfo.key}.nama`)}
                 </span>
               </div>
               <div className="mb-3">

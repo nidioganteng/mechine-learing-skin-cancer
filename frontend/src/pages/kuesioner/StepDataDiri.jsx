@@ -14,8 +14,14 @@ export default function StepDataDiri({ form, options, onInput, set }) {
         { value: 'Female', label: t('questionnaire.personal.female') },
       ]
 
+  const uvLabelMap = {
+    Low:      t('questionnaire.personal.uvLow'),
+    Moderate: t('questionnaire.personal.uvModerate'),
+    High:     t('questionnaire.personal.uvHigh'),
+  }
+
   const sunOptions = options.sun_exposures.length
-    ? options.sun_exposures.map(s => ({ value: s, label: s }))
+    ? options.sun_exposures.map(s => ({ value: s, label: uvLabelMap[s] ?? s }))
     : [
         { value: 'Low',      label: t('questionnaire.personal.uvLow') },
         { value: 'Moderate', label: t('questionnaire.personal.uvModerate') },
