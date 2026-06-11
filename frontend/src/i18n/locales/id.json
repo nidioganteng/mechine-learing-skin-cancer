@@ -319,7 +319,7 @@
 
     "summary": {
       "heading": "Laporan Hasil Analisis",
-      "highRisk": "RESIKO TINGGI",
+      "highRisk": "BERISIKO",
       "notRisky": "TIDAK BERISIKO",
       "demographics": "Data Demografi",
       "aiScore": "Skor AI — EfficientNet-B3",
